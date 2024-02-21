@@ -11,10 +11,11 @@ ENV KONG_ROUTER_FLAVOR=expressions
 
 USER root
 
+ARG TARGETARCH
 ARG DECK_VERSION=1.27.1
 ARG DECK_DIRECTORY="/usr/local/bin/deck"
-ARG DECK_ARTIFACT_NAME="deck_${DECK_VERSION}_linux_amd64.tar.gz"
-ARG DECK_DOWNLOAD_URL="https://github.com/kong/deck/releases/download/v${DECK_VERSION}/$DECK_ARTIFACT_NAME"
+ARG DECK_ARTIFACT_NAME="deck_${DECK_VERSION}_linux_${TARGETARCH}.tar.gz"
+ARG DECK_DOWNLOAD_URL="https://github.com/kong/deck/releases/download/v${DECK_VERSION}/${DECK_ARTIFACT_NAME}"
 
 RUN apt-get update \
     && apt-get -y upgrade \
