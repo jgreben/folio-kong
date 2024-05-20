@@ -38,7 +38,7 @@ services:
           - http
           - https
     port: 8001
-    protocol: http
+    protocol: ${{ env "DECK_SERVICE_PROTOCOL" }}
     read_timeout: 60000
     retries: 5
     routes:
