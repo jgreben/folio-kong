@@ -8,6 +8,7 @@ ENV KONG_PROXY_ACCESS_LOG="/dev/stdout txns"
 ENV KONG_ADMIN_ACCESS_LOG="/dev/stdout txns"
 ENV KONG_NGINX_HTTP_LOG_FORMAT="txns '\$http_x_forwarded_for - \$remote_addr - \$remote_user [\$time_local] \"\$request\" \$status \$body_bytes_sent rt=\$request_time uct=\"\$upstream_connect_time\" uht=\"\$upstream_header_time\" urt=\"\$upstream_response_time\" \"\$http_user_agent\" \"\$http_x_okapi_tenant\"'"
 ENV KONG_ROUTER_FLAVOR=expressions
+ENV DECK_SERVICE_PROTOCOL=http
 
 USER root
 

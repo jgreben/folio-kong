@@ -28,7 +28,7 @@ services:
     name: CORS
     tags: ["automation"]
     port: 80
-    protocol: http
+    protocol: ${{ env "DECK_SERVICE_PROTOCOL" }}
     read_timeout: 60000
     retries: 5
     routes:
