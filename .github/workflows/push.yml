@@ -8,7 +8,7 @@ permissions:
 
 jobs:
   build-and-push-image:
-    runs-on: amd64/ubuntu
+    runs-on: ubuntu-latest
     steps:
 
     - name: Extract branch name
@@ -27,7 +27,7 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Build image and push to Docker Hub and GitHub Container Registry
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@v6
       with:
         push: true
         tags: ghcr.io/jgreben/folio-kong:${{ steps.extract_branch.outputs.branch }}
